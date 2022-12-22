@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          #cleaning{
+               display: none;
+          }
+          #success{
+               display: none;
+          }
+     </style>
+</head>
+<body>
+<audio src="./Energetic Rock (30 sec) - Royalty-Free Background Music  Cinematic.mp3" id="audio-element"></audio>
+<button id="play-button">Clean</button>
+<h2 id="cleaning">Cleaning your speaker.....</h2>
+<h2 id="success">Success</h2>
+     <script>
+let audioElement = document.getElementById('audio-element');
+let playButton = document.getElementById('play-button');
+let res = document.getElementById('cleaning');
+let suc = document.getElementById('success')
+playButton.addEventListener('click', function() {
+  if (audioElement.paused) {
+    audioElement.play();
+    res.innerHTML='Cleaning your speaker.....'
+    res.style.display='block'
+    suc.style.display='none'
+    playButton.innerHTML='Play'
+  } else {
+    audioElement.currentTime = 0;
+    audioElement.pause();
+    res.innerHTML='Cleaning Paused'
+    suc.style.display='none'
+    playButton.innerHTML='Play'
+  }
+});
+audioElement.addEventListener('ended', function() {
+  audioElement.currentTime = 0;
+  audioElement.pause();
+  res.style.display='none'
+  suc.style.display='block'
+  playButton.innerHTML='startagain'
+});
+     </script>
+</body>
+</html>
