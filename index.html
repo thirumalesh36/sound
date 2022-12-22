@@ -30,13 +30,13 @@ playButton.addEventListener('click', function() {
     res.innerHTML='Cleaning your speaker.....'
     res.style.display='block'
     suc.style.display='none'
-    playButton.innerHTML='Play'
+    playButton.innerHTML='Clean'
   } else {
     audioElement.currentTime = 0;
     audioElement.pause();
     res.innerHTML='Cleaning Paused'
     suc.style.display='none'
-    playButton.innerHTML='Play'
+    playButton.innerHTML='Clean'
   }
 });
 audioElement.addEventListener('ended', function() {
@@ -44,7 +44,7 @@ audioElement.addEventListener('ended', function() {
   audioElement.pause();
   res.style.display='none'
   suc.style.display='block'
-  playButton.innerHTML='startagain'
+  playButton.innerHTML='Clean Again'
 });
      </script>
 </body>
